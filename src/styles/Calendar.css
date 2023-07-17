@@ -12,7 +12,7 @@
   border-radius: 8px 0px 0px 8px;
   height: 45px;
   border: none;
-  width: 175px;
+  
 }
 
 #datePickerContainer
@@ -27,7 +27,7 @@
   border-radius: 0px 8px 8px 0px;
   height: 45px;
   border: none;
-  width: 175px;
+  
 }
 
 #divider

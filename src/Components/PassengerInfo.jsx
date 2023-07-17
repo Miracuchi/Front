@@ -1,11 +1,52 @@
+/* eslint-disable no-console */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState, useEffect, useRef } from 'react';
-import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import UseClickOutside from './ClickOutsideHandler';
 import '../Styles/PassengerInfo.css';
 
+const youthAgeOptions = [];
+for (let i = 0; i <= 25; i += 1) {
+  const youthAgeCreation = {
+    value: `Youth ${i}`,
+    label: `${i} years`,
+  };
+
+  youthAgeOptions.push(youthAgeCreation);
+}
+
+const FLIP_STATES_PASS = {
+  start: {
+    value: 'startPass',
+    className: '',
+  },
+  up: {
+    value: 'upPass',
+    className: 'flipPass',
+  },
+  down: {
+    value: 'downPass',
+    className: 'flipDownPass',
+  },
+};
+
 function PassengerInfo() {
+  const [flipStatePass, setFlipStatePass] = useState(FLIP_STATES_PASS.start);
+  const handleFlipClickPass = () => {
+    switch (flipStatePass.value) {
+      case 'upPass':
+      case 'startPass':
+        setFlipStatePass(FLIP_STATES_PASS.down);
+        break;
+      case 'downPass':
+        setFlipStatePass(FLIP_STATES_PASS.up);
+        break;
+      default:
+    }
+  };
+  console.log(flipStatePass);
   const [isPassengerInfoVisible, setIsPassengerInfoVisible] = useState(false);
   const [passengerCount, setPassengerCount] = useState({
     adult: 0,
@@ -13,35 +54,6 @@ function PassengerInfo() {
     youth: 0,
   });
   const [youthAges, setYouthAges] = useState({});
-
-  const youthAgeOptions = [
-    { value: 'Youth 0', label: '0 year' },
-    { value: 'Youth 1', label: '1 year' },
-    { value: 'Youth 2', label: '2 years' },
-    { value: 'Youth 3', label: '3 years' },
-    { value: 'Youth 4', label: '4 years' },
-    { value: 'Youth 5', label: '5 years' },
-    { value: 'Youth 6', label: '6 years' },
-    { value: 'Youth 7', label: '7 years' },
-    { value: 'Youth 8', label: '8 years' },
-    { value: 'Youth 9', label: '9 years' },
-    { value: 'Youth 10', label: '10 years' },
-    { value: 'Youth 11', label: '11 years' },
-    { value: 'Youth 12', label: '12 years' },
-    { value: 'Youth 13', label: '13 years' },
-    { value: 'Youth 14', label: '14 years' },
-    { value: 'Youth 15', label: '15 years' },
-    { value: 'Youth 16', label: '16 years' },
-    { value: 'Youth 17', label: '17 years' },
-    { value: 'Youth 18', label: '18 years' },
-    { value: 'Youth 19', label: '19 years' },
-    { value: 'Youth 20', label: '20 years' },
-    { value: 'Youth 21', label: '21 years' },
-    { value: 'Youth 22', label: '22 years' },
-    { value: 'Youth 23', label: '23 years' },
-    { value: 'Youth 24', label: '24 years' },
-    { value: 'Youth 25', label: '25 years' },
-  ];
 
   const handlePassengerInfoClick = () => {
     if (isPassengerInfoVisible === false) {
@@ -54,6 +66,7 @@ function PassengerInfo() {
   const passengerInfoRef = useRef(null);
   const handleClickOutsidePassengerCount = () => {
     setIsPassengerInfoVisible(false);
+    setFlipStatePass(FLIP_STATES_PASS.up);
   };
   UseClickOutside(passengerInfoRef, handleClickOutsidePassengerCount);
 
@@ -100,11 +113,13 @@ function PassengerInfo() {
 
   return (
     <>
-      <button type="button" id="passengerButton" onClick={handlePassengerInfoClick} ref={passengerInfoRef}>
-        <span id="totalPassengerCount">0</span>
-        <span className="fontChevron">Passagers</span>
-        <FontAwesomeIcon icon={faChevronUp} className={isPassengerInfoVisible ? 'rotate' : 'rotate2'} rotation={isPassengerInfoVisible ? 0 : 180} />
-      </button>
+      <span onClick={handleFlipClickPass}>
+        <button type="button" id="passengerButton" onClick={handlePassengerInfoClick} ref={passengerInfoRef}>
+          <span id="totalPassengerCount">0</span>
+          <span className="fontChevron">Passagers</span>
+          <FontAwesomeIcon icon={faChevronDown} className={`chevrons ${flipStatePass.className}`} />
+        </button>
+      </span>
       <div id="passengerCount" className={isPassengerInfoVisible ? 'visible' : ''}>
 
         <div className="passengerInfo">

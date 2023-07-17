@@ -13,6 +13,7 @@ import InputSearch from './InputSearch';
 import Calendar from './Calendar';
 import SearchButton from './SearchButton';
 import '../Styles/SearchBar.css';
+import Slider from './Slider';
 
 library.add(faChevronUp, faChevronDown);
 
@@ -27,6 +28,9 @@ function SearchBar() {
         <InputSearch />
         <Calendar />
         <SearchButton />
+      </div>
+      <div>
+        <Slider />
       </div>
     </div>
   );

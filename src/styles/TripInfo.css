@@ -87,3 +87,38 @@
   border: none;
   background-color: #ffffff;
 }
+
+
+.chevron {
+  transition: transform 0.3s;
+}
+
+.flip {
+  animation: flip 1s forwards;
+  animation-play-state: running;
+}
+
+.flipDown
+{
+  animation: flipDown 1s forwards;
+  animation-play-state: running;
+}
+
+
+@keyframes flip {
+  0% {
+    transform: rotateX(180deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes flipDown {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(180deg);
+  }
+}

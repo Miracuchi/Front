@@ -22,7 +22,7 @@ function Calendar() {
   };
 
   return (
-    <div id="twoCalendar">
+    <>
       {selectedDates.map((selectedDate, index) => (
         <div key={index} id="datePickerContainer">
           <DatePicker
@@ -36,7 +36,7 @@ function Calendar() {
         </div>
       ))}
       <span id="divider" />
-    </div>
+    </>
   );
 }
 

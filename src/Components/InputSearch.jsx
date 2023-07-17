@@ -120,12 +120,9 @@ function InputSearch() {
 
   return (
     <>
-      <div id="twoInput">
-        <input type="text" id="inputSearchFrom" value={searchValueFrom} onChange={(event) => handleChange(event, 'from')} placeholder="From: City, Station, or Airport" ref={refs.suggestionsFromInfo} />
-        <input type="text" id="inputSearchTo" value={searchValueTo} onChange={(event) => handleChange(event, 'to')} placeholder="To: City, Station, or Airport" ref={refs.suggestionsToInfo} />
-      </div>
-      <div>
-        {isSuggestionListFromVisible && (
+      <input type="text" id="inputSearchFrom" value={searchValueFrom} onChange={(event) => handleChange(event, 'from')} placeholder="From: City, Station, or Airport" ref={refs.suggestionsFromInfo} />
+      <input type="text" id="inputSearchTo" value={searchValueTo} onChange={(event) => handleChange(event, 'to')} placeholder="To: City, Station, or Airport" ref={refs.suggestionsToInfo} />
+      {isSuggestionListFromVisible && (
         <div id="suggestionListFrom">
           <ul>
             {suggestionsFrom.map((element, id) => (
@@ -147,9 +144,9 @@ function InputSearch() {
           </div>
           )}
         </div>
-        )}
+      )}
 
-        {isSuggestionListToVisible && (
+      {isSuggestionListToVisible && (
         <div id="suggestionListTo">
           <ul>
             {suggestionsTo.map((element, id) => (
@@ -171,9 +168,7 @@ function InputSearch() {
             )}
           </ul>
         </div>
-        )}
-      </div>
-
+      )}
     </>
   );
 }
