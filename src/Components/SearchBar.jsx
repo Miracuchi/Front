@@ -12,7 +12,7 @@ import PassengerInfo from './PassengerInfo';
 import InputSearch from './InputSearch';
 import Calendar from './Calendar';
 import SearchButton from './SearchButton';
-import '../Styles/SearchBar.css';
+import '../styles/SearchBar.css';
 import Slider from './Slider';
 
 library.add(faChevronUp, faChevronDown);

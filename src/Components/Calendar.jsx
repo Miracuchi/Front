@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import '../Styles/Calendar.css';
+import '../styles/Calendar.css';
 
 function Calendar() {
   const [selectedDates, setSelectedDates] = useState(Array.from({ length: 2 }, () => null));
