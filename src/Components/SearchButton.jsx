@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Styles/SearchButton.css';
+import '../styles/SearchButton.css';
 
 function SearchButton() {
   return (

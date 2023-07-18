@@ -5,7 +5,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import 'react-datepicker/dist/react-datepicker.css';
 import UseClickOutside from './ClickOutsideHandler';
-import '../Styles/InputSearch.css';
+import '../styles/InputSearch.css';
 
 function InputSearch() {
   const [searchValueFrom, setSearchValueFrom] = useState('');

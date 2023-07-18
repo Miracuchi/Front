@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../Styles/SearchButton.css';
+import '../styles/SearchButton.css';
 
 function Slider() {
   const [isChecked, setIsChecked] = useState(false);
