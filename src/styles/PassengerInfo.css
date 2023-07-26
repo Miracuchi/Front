@@ -36,10 +36,12 @@
   justify-content: space-between;
   margin: 20px;
   margin-bottom: 5px;
+  
 }
 
 #passengerCount.visible
 {
+  z-index: 1;
   display: block;
   width: 350px;
   margin-left: 120px;
@@ -123,6 +125,7 @@
 #passengerInfo
 {
   display: flex;
+  z-index: 5;
 }
 
 #containerPassengers
@@ -135,6 +138,7 @@
 
 .chevrons {
   transition: transform 0.3s;
+  margin-left: 2px;
 }
 
 .flipPass {
@@ -165,4 +169,15 @@
   100% {
     transform: rotateX(180deg);
   }
+}
+
+@media screen and (max-width: 900px) {
+  #passengerCount.visible
+  {
+    top: 200px;
+    margin: auto;
+    width: 80%;
+  }
+  
+  
 }

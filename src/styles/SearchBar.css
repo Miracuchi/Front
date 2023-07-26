@@ -16,6 +16,32 @@
   align-items: baseline;
 }
 
+@media screen and (max-width: 768px) {
+  #searchBar
+  {
+    width: 80%;
+  }
+  #allInput
+  {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+}
+
+@media (min-width: 768px) and (max-width: 1024px)  {
+  #searchBar
+  {
+    width: 80%;
+  }
+  #allInput
+  {
+    margin: auto;
+  }
+  
+}
+
 
 
 

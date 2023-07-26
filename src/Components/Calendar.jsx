@@ -24,7 +24,7 @@ function Calendar() {
   return (
     <>
       {selectedDates.map((selectedDate, index) => (
-        <div key={index} id="datePickerContainer">
+        <div key={index} className="datePickerContainer">
           <DatePicker
             selected={selectedDate}
             onChange={(date) => handleDateChange(date, index)}

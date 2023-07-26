@@ -91,6 +91,7 @@
 
 .chevron {
   transition: transform 0.3s;
+  margin-left: 2px;
 }
 
 .flip {
