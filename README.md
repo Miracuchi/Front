@@ -8,8 +8,8 @@ You can create choose your kind of trip, the number of passenger, the age of the
 To use the component, simply download or clone the repository and run it with yarn or npm.
 
 🔧 Tools and Technologies
-React for the component
-React Date Picker for the calendar
+- React for the component
+- React Date Picker for the calendar
 TicTacTrip's API for datas
 FontAwesome for the icons
 Git for version control
